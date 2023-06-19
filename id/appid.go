@@ -9,8 +9,8 @@ func GetAppidAndSecret(id int64) (string, string) {
 		id = GetId()
 	}
 	appid0 := Int64ToStr(id)
-	appid1 := md5.To32(appid0)
+	appid1 := md5.ToStr32(appid0)
 	appid := appid1[5:14]
-	secret := md5.To32(appid0 + appid)
+	secret := md5.ToStr32(appid0 + appid)
 	return appid, secret
 }
